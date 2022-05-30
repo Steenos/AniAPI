@@ -245,7 +245,7 @@ namespace WebAPI.Controllers
 
                 this._userCollection.Add(ref model);
 
-                SmtpClient smtp = new SmtpClient(_configuration.GetValue<string>("smtp_host"), _configuration.GetValue<int>("smtp_port"))
+                /* SmtpClient smtp = new SmtpClient(_configuration.GetValue<string>("smtp_host"), _configuration.GetValue<int>("smtp_port"))
                 {
                     Credentials = new NetworkCredential(_configuration.GetValue<string>("smtp_username"), _configuration.GetValue<string>("smtp_password")),
                     EnableSsl = true
@@ -261,7 +261,7 @@ namespace WebAPI.Controllers
 
                 mail.To.Add(model.Email);
 
-                smtp.Send(mail);
+                smtp.Send(mail); */
 
                 return APIManager.SuccessResponse("User created", model);
             }
